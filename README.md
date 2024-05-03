@@ -1,1 +1,1 @@
-# A UK based retail client wants to look into their transactional data sets and perform analytics to increase sales and improve customer loyalty. You are provided a sample data (attached with this mail) for your peruse. You are requested to look into this data set and use various analytical techniques/ algorithms to understand it better and come up with insights that business can use. 
+# Battery IOT. 
