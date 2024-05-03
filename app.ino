@@ -155,12 +155,12 @@ void loop() {
   // Send telemetry data to Azure IoT Hub
   char payload[512];
   serializeJson(root, payload, sizeof(payload));
-  az_iot_hub_client_property_type props;
-  az_iot_hub_client_property_type(&props, NULL);
-  az_iot_hub_client_property_type(&props, AZ_SPAN_FROM_STR("key"), AZ_SPAN_FROM_STR("value"));
-  az_iot_hub_client_properties_append(&props, AZ_SPAN_FROM_STR("another_key"), AZ_SPAN_FROM_STR("another_value"));
+  az_iot_message_properties props;
+  az_iot_message_properties_init(&props, NULL);
+  az_iot_message_properties_append(&props, AZ_SPAN_FROM_STR("key"), AZ_SPAN_FROM_STR("value"));
+  az_iot_message_properties_append(&props, AZ_SPAN_FROM_STR("another_key"), AZ_SPAN_FROM_STR("another_value"));
  
-  az_result = az_iot_hub_client_properties_message(&client, payload, strlen(payload), &props);
+  az_result = az_iot_hub_client_telemetry_send_message(&client, payload, strlen(payload), &props);
   if (az_result_failed(result)) {
     Serial.println("Failed to send telemetry data to Azure IoT Hub");
   } else {
