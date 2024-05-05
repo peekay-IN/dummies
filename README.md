@@ -1,1 +1,1 @@
-# Battery IOT. 
+# For Dummies
