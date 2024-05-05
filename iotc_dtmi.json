@@ -1,0 +1,316 @@
+{
+    "@id": "dtmi:com:example:BatteryPack;1",
+    "@type": "Interface",
+    "contents": [
+        {
+            "@type": "Command",
+            "description": {
+                "en": "Reboots the battery pack."
+            },
+            "displayName": {
+                "en": "Reboot"
+            },
+            "name": "Reboot"
+        },
+        {
+            "@type": "Command",
+            "description": {
+                "en": "Calibrates the battery pack."
+            },
+            "displayName": {
+                "en": "Calibrate"
+            },
+            "name": "Calibrate",
+            "request": {
+                "@type": "CommandPayload",
+                "description": {
+                    "en": "The calibration mode."
+                },
+                "displayName": {
+                    "en": "Mode"
+                },
+                "name": "mode",
+                "schema": {
+                    "@type": "Enum",
+                    "enumValues": [
+                        {
+                            "displayName": {
+                                "en": "Full"
+                            },
+                            "enumValue": "full",
+                            "name": "full"
+                        },
+                        {
+                            "displayName": {
+                                "en": "Partial"
+                            },
+                            "enumValue": "partial",
+                            "name": "partial"
+                        }
+                    ],
+                    "valueSchema": "string"
+                }
+            },
+            "response": {
+                "@type": "CommandPayload",
+                "description": {
+                    "en": "The calibration status."
+                },
+                "displayName": {
+                    "en": "Status"
+                },
+                "name": "status",
+                "schema": "string"
+            }
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 1"
+            },
+            "name": "Cell1",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 2"
+            },
+            "name": "Cell2",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 3"
+            },
+            "name": "Cell3",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 4"
+            },
+            "name": "Cell4",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 5"
+            },
+            "name": "Cell5",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 6"
+            },
+            "name": "Cell6",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 7"
+            },
+            "name": "Cell7",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 9"
+            },
+            "name": "Cell8",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 10"
+            },
+            "name": "Cell10",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 11"
+            },
+            "name": "Cell11",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 12"
+            },
+            "name": "Cell12",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 13"
+            },
+            "name": "Cell13",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 14"
+            },
+            "name": "Cell14",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 15"
+            },
+            "name": "Cell15",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": "Component",
+            "displayName": {
+                "en": "Cell 16"
+            },
+            "name": "Cell16",
+            "schema": "dtmi:com:example:Cell;1"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "NumberValue",
+                "Voltage"
+            ],
+            "displayName": {
+                "en": "Pack Voltage"
+            },
+            "name": "totalVoltage",
+            "schema": "double",
+            "unit": "volt",
+            "decimalPlaces": 3,
+            "maxValue": 100,
+            "minValue": 0
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "NumberValue",
+                "Current"
+            ],
+            "displayName": {
+                "en": "Current"
+            },
+            "name": "current",
+            "schema": "double"
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Remaining Capacity"
+            },
+            "name": "remainingCapacity",
+            "schema": "double",
+            "unit": "watt"
+        },
+        {
+            "@id": "dtmi:com:example:BatteryPack:nominalCapacity;1",
+            "@type": [
+                "Telemetry",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Nominal Capacity"
+            },
+            "name": "nominalCapacity",
+            "schema": "double"
+        },
+        {
+            "@id": "dtmi:com:example:BatteryPack:cycles;1",
+            "@type": [
+                "Telemetry",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Cycles"
+            },
+            "name": "cycles",
+            "schema": "double",
+            "unit": "radian"
+        },
+        {
+            "@id": "dtmi:com:example:BatteryPack:rsoc;1",
+            "@type": [
+                "Telemetry",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Remaining SoC"
+            },
+            "name": "rsoc",
+            "schema": "double"
+        },
+        {
+            "@id": "dtmi:com:example:BatteryPack:EB_yn;1",
+            "@type": "Component",
+            "displayName": {
+                "en": "Component"
+            },
+            "name": "EB_yn",
+            "schema": "dtmi:battery:EB_yn;1"
+        },
+        {
+            "@id": "dtmi:com:example:BatteryPack:balanceStatus;1",
+            "@type": "Command",
+            "commandType": "synchronous",
+            "displayName": {
+                "en": "Balance Status"
+            },
+            "name": "balanceStatus"
+        },
+        {
+            "@id": "dtmi:com:example:BatteryPack:protectionStatus;1",
+            "@type": "Command",
+            "commandType": "synchronous",
+            "displayName": {
+                "en": "Protection"
+            },
+            "name": "protectionStatus"
+        },
+        {
+            "@id": "dtmi:com:example:BatteryPack:fetControl;1",
+            "@type": "Command",
+            "commandType": "synchronous",
+            "displayName": {
+                "en": "Mosfet Control"
+            },
+            "name": "fetControl"
+        },
+        {
+            "@id": "dtmi:com:example:BatteryPack:shutOff;1",
+            "@type": "Command",
+            "commandType": "synchronous",
+            "displayName": {
+                "en": "Shut Off"
+            },
+            "name": "shutOff"
+        }
+    ],
+    "displayName": {
+        "en": "Battery Pack"
+    },
+    "@context": [
+        "dtmi:iotcentral:context;2",
+        "dtmi:dtdl:context;2"
+    ]
+}
